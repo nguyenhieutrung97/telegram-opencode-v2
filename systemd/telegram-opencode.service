@@ -1,0 +1,24 @@
+[Unit]
+Description=Telegram OpenCode Gateway
+After=network-online.target opencode.service
+Wants=network-online.target
+Requires=opencode.service
+[Service]
+Type=simple
+User=trung
+Group=trung
+WorkingDirectory=/opt/telegram-opencode
+EnvironmentFile=/etc/telegram-opencode/secrets.env
+Environment=BOT_DB=/var/lib/telegram-opencode/bot.sqlite3
+ExecStart=/opt/telegram-opencode/.venv/bin/python /opt/telegram-opencode/app/bot.py
+Restart=on-failure
+RestartSec=10
+StateDirectory=telegram-opencode
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/telegram-opencode
+PrivateTmp=true
+[Install]
+WantedBy=multi-user.target

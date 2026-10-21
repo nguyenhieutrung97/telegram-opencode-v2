@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenCode API (localhost)
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+User=trung
+Group=trung
+WorkingDirectory=/home/trung
+Environment=HOME=/home/trung
+Environment=PATH=/home/trung/.opencode/bin:/usr/local/bin:/usr/bin:/bin
+EnvironmentFile=/etc/telegram-opencode/secrets.env
+ExecStart=/home/trung/.opencode/bin/opencode serve --hostname 127.0.0.1 --port 4096
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+[Install]
+WantedBy=multi-user.target

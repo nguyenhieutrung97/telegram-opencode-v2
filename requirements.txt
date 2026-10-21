@@ -1,0 +1,3 @@
+python-telegram-bot[job-queue]>=21,<23
+httpx>=0.27,<1
+psutil>=6,<9

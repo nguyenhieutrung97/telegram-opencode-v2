@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "cloudflare": {
+        "type": "local",
+        "command": [
+          "/home/trung/.local/node/bin/node",
+          "/home/trung/.local/node/lib/node_modules/@cloudflare/mcp-server-cloudflare/dist/index.js",
+          "run",
+          "b76919bb3368a7868869cb7b171cfb23"
+        ],
+        "environment": {
+          "CLOUDFLARE_API_TOKEN": "{env:CLOUDFLARE_API_TOKEN}"
+        }
+      }
+    }
+  }
+}

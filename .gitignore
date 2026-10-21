@@ -1,0 +1,27 @@
+# Secrets — KHÔNG commit
+secrets.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.db
+
+# Logs
+*.log
+
+# OpenCode / local
+.opencode/
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
